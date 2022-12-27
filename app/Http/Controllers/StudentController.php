@@ -15,7 +15,7 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
-        //
+        
         $students = Student::where(['grade' => $request->grade])->get();
         $sections = Section::all();
         return view("students.list", ["students" => $students, "sections" => $sections]);
@@ -42,6 +42,16 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
+        $student = new Student;
+        $student->name = $request->name;
+        $student->contact = $request->contact;
+        $student->subjects = $request->subjects;
+        $student->academics = $request->academics;
+        $student->extras = $request->extras;
+        $student->notes = $request->notes;
+        $student->grade = $request->grade;
+        $student->save();
+        return redirect("students?grade=".$request->grade);
     }
 
     /**
@@ -53,6 +63,9 @@ class StudentController extends Controller
     public function show($id)
     {
         //
+        $student = Student::find($id);
+        $sections = Section::all();
+        return view("students.show", ['sections' => $sections, 'student' => $student]);
     }
 
     /**

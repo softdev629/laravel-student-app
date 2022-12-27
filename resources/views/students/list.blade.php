@@ -1,11 +1,11 @@
 <x-app-layout>
   <div style="margin: 10px; background-color: white; display:flex; padding: 20px">
-    <div style="flex: 3; border-right: 1px solid;">
-      <table style="padding: 10px; border-collapse: collapse;">
+    <div style="flex: 3; border-right: 1px solid; padding-right: 10px;">
+      <table width="100%">
         @foreach ($students as $item)
             <tr>
               <td>{{ "Student ".($loop->index + 1) }}</td>
-              <td>{{ "Name ".$item->name }}</td>
+              <td><a href={{ "/students/".$item->id }} style="text-decoration: none;">{{ "Name ".$item->name }}</a></td>
             </tr>
         @endforeach
       </table>

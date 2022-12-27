@@ -40,7 +40,7 @@ class SectionController extends Controller
         $section = new Section;
         $section->name = $request->name;
         $section->save();
-        return redirect('/home');
+        return redirect('home');
     }
 
     /**

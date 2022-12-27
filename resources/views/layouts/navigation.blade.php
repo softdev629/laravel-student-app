@@ -16,14 +16,23 @@
             {{ __('Home') }}
           </x-nav-link>
         </div>
-
+        
         @if(request()->routeIs('home'))
-          <div class="inline-flex items-center px-4">
-            <div class="border p-2 px-6 rounded" style="font-weight: bold; border-color: black">Welcome to your student management system, Ms.Tiyasa!</div>
+          <div class="inline-flex items-center px-4" style="flex:1">
+            <div class="border p-2 px-6 rounded" style="width: 100%; text-align:center; font-weight: bold; border-color: black">Welcome to your student management system, Ms.Tiyasa!</div>
           </div>
+        @elseif(request()->routeIs('students.index'))
+          <div class="inline-flex items-center px-4" style="flex:1">
+            <div class="border p-2 px-6 rounded" style="width: 100%; text-align:center; font-weight: bold; border-color: black; background-color: lightgrey">{{ "Grade x".request()->input('grade') }}</div>
+          </div>
+        @elseif(request()->routeIs('students.show'))
+          @hasSection('namediv')
+            @yield('namediv')
+          @endif
+        @else
+          <div style="flex:1"></div>
         @endif
 
-        <div style="flex:1;"></div>
         <div class="inline-flex items-center px-4">
           <label class="px-3">search: </label>
           <input type="text" name="search" style="line-height: 1rem;font-size:10px; padding: 3px; width: 200px;" />

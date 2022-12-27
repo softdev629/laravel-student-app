@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("contact")->nullable();
             $table->string("subjects")->nullable();
             $table->string("academics")->nullable();
+            $table->string("photo")->nullable();
             $table->string("extras")->nullable();
             $table->string("notes")->nullable();
             $table->timestamps();
