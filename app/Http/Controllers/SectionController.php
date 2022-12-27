@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class SectionController extends Controller
@@ -24,6 +25,7 @@ class SectionController extends Controller
     public function create()
     {
         //
+        return view("sections.create");
     }
 
     /**
@@ -35,6 +37,10 @@ class SectionController extends Controller
     public function store(Request $request)
     {
         //
+        $section = new Section;
+        $section->name = $request->name;
+        $section->save();
+        return redirect('/home');
     }
 
     /**

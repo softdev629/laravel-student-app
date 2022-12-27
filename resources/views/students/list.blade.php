@@ -16,7 +16,7 @@
     </div>
     <div style="flex: 1; padding-left: 20px;">
       @foreach ($sections as $item)
-        <div style="background-color: grey; text-align: center; font-size: 36px; padding: 10px 0px;">{{ $item->name }}</div>
+        <div style="background-color: grey; text-align: center; font-size: 36px; padding: 10px 0px; margin: 10px 0px;">{{ $item->name }}</div>
       @endforeach
       <div style="display:flex; padding-top: 10px;">
         <div style="flex:1"></div>

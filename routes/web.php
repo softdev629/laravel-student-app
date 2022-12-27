@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SectionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +31,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resources([
-    'students' => StudentController::class
+    'students' => StudentController::class,
+    'sections' => SectionController::class
 ]);
 
 require __DIR__.'/auth.php';
