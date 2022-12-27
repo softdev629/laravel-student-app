@@ -2,7 +2,7 @@
   <!-- Primary Navigation Menu -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16">
-      <div class="flex">
+      <div class="flex" style="flex:1">
         <!-- Logo -->
         <div class="shrink-0 flex items-center">
           <a href="{{ route('home') }}">
@@ -18,7 +18,16 @@
         </div>
 
         @if(request()->routeIs('home'))
+          <div class="inline-flex items-center px-4">
+            <div class="border p-2 px-6 rounded" style="font-weight: bold; border-color: black">Welcome to your student management system, Ms.Tiyasa!</div>
+          </div>
         @endif
+
+        <div style="flex:1;"></div>
+        <div class="inline-flex items-center px-4">
+          <label class="px-3">search: </label>
+          <input type="text" name="search" style="line-height: 1rem;font-size:10px; padding: 3px; width: 200px;" />
+        </div>
 
       </div>
 
